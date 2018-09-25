@@ -1,0 +1,15 @@
+{
+    "name": "dimichspb/framework",
+    "authors": [
+        {
+            "name": "Dmitry Tarantin",
+            "email": "dimichspb@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "app\\": "src/"
+        }
+    }
+}
