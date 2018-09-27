@@ -35,11 +35,12 @@ class BasicAuthMiddleware implements MiddlewareInterface
                         }
                     }
                 }
+                return $this->responsePrototype
+                    ->withStatus(401)
+                    ->withHeader('WWW-Authenticate', 'Basic realm=Restricted area');
             }
         }
 
-        return $this->responsePrototype
-            ->withStatus(401)
-            ->withHeader('WWW-Authenticate', 'Basic realm=Restricted area');
+        return $handler->handle($request);
     }
 }
