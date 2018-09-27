@@ -30,7 +30,7 @@ class UpdateForm extends BaseForm
         }
 
         try {
-            Assertion::notNull($this->done);var_dump($this->done);
+            Assertion::notNull($this->done);
             Assertion::boolean($this->done);
         } catch (InvalidArgumentException $exception) {
             $this->addError('done', $exception->getMessage());
