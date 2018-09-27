@@ -33,8 +33,8 @@ $container->add(\app\http\emitter\EmitterInterface::class, \app\http\emitter\Emi
 $container->add(\app\http\renderer\RendererInterface::class, \app\http\renderer\Renderer::class)->addArgument('views')->addArgument('main');
 $container->add(\app\http\middleware\BasicAuthMiddleware::class, \app\http\middleware\BasicAuthMiddleware::class)->addArgument([
     '/task/update' => [
-        'username' => 'admin1',
-        'password' => 'admin1',
+        'username' => 'admin',
+        'password' => '1234',
     ],
 ])->addArgument(new \app\http\entities\response\Response());
 

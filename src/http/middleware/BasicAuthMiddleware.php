@@ -26,14 +26,14 @@ class BasicAuthMiddleware implements MiddlewareInterface
 
         $path = $request->getUri()->getPath();
 
-        if (!in_array($path, array_keys($this->access))) {
-            return $handler->handle($request);
-        }
-
-        if (!empty($username) && !empty($password)) {
-            foreach ($this->access as $key => $userdata) {
-                if ($username === $userdata['username'] && $password === $userdata['password'] && $path === $key) {
-                    return $handler->handle($request->withAttribute(self::ATTRIBUTE, $username));
+        foreach (array_keys($this->access) as $key) {
+            if (strpos($path, $key) === 0) {
+                if (!empty($username) && !empty($password)) {
+                    foreach ($this->access as $key => $userdata) {
+                        if ($username === $userdata['username'] && $password === $userdata['password']) {
+                            return $handler->handle($request->withAttribute(self::ATTRIBUTE, $username));
+                        }
+                    }
                 }
             }
         }
