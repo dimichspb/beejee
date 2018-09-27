@@ -6,7 +6,23 @@
             "email": "dimichspb@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=7.1.0",
+        "ext-pdo": "*",
+        "beberlei/assert": "*",
+        "psr/container": "^1.0",
+        "psr/http-message": "^1.0",
+        "psr/http-server-middleware": "^1.0",
+        "psr/log": "^1.0",
+        "league/container": "*",
+        "league/route": "*",
+        "doctrine/orm": "^2.6",
+        "symfony/yaml": "*",
+        "ramsey/uuid": "^3.8",
+        "doctrine/migrations": "^1.8",
+        "twbs/bootstrap": "4.0.0"
+
+    },
     "autoload": {
         "psr-4": {
             "app\\": "src/"

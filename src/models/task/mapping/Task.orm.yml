@@ -1,0 +1,33 @@
+app\models\task\Task:
+  type: entity
+  table: task
+  id:
+    id:
+      id: true
+      column: id
+      type: Type\Task\Id
+      generator:
+        strategy: CUSTOM
+      customIdGenerator:
+        class: 'app\helpers\HashIdGenerator'
+  fields:
+    user:
+      column: user
+      type: Type\Task\User
+      nullable: false
+    email:
+      column: email
+      type: Type\Task\Email
+      nullable: false
+    description:
+      column: description
+      type: Type\Task\Description
+      nullable: false
+    image:
+      column: image
+      type: Type\Task\Image
+      nullable: false
+    done:
+      column: done
+      type: Type\Task\Done
+      nullable: false
