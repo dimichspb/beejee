@@ -34,7 +34,7 @@ $container->add(\app\http\renderer\RendererInterface::class, \app\http\renderer\
 $container->add(\app\http\middleware\BasicAuthMiddleware::class, \app\http\middleware\BasicAuthMiddleware::class)->addArgument([
     '/task/update' => [
         'username' => 'admin',
-        'password' => '1234',
+        'password' => '123',
     ],
 ])->addArgument(new \app\http\entities\response\Response());
 
