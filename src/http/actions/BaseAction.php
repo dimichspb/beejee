@@ -28,6 +28,11 @@ abstract class BaseAction implements ActionInterface
         return ResponseFactory::fromString($this->renderer->render($view, $params));
     }
 
+    public function raw($steam, $headers = []): ResponseInterface
+    {
+        return ResponseFactory::fromStream($steam, $headers);
+    }
+
     public function redirect($url)
     {
         header('Location: ' . $url);

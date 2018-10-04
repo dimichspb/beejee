@@ -1,10 +1,10 @@
 <?php
 
-use app\actions\IndexAction;
 use app\actions\task\IndexAction as TaskIndexAction;
 use app\actions\task\UpdateAction as TaskUpdateAction;
 use app\actions\task\ViewAction as TaskViewAction;
 use app\actions\task\CreateAction as TaskCreateAction;
+use app\actions\task\ImageAction as TaskImageAction;
 use app\helpers\EntityManagerBuilder;
 use app\http\entities\request\RequestFactory;
 use app\http\router\entities\route\Handler;
@@ -69,17 +69,35 @@ $container->add(
     ->addArgument($em)
     ->addArgument($em->getRepository(\app\models\task\Task::class));
 
+$container->add(
+    \app\services\task\FilesystemInterface::class,
+    \app\services\task\Filesystem::class
+)
+    ->addArgument(
+        new \League\Flysystem\Filesystem(
+            new \League\Flysystem\Adapter\Local($runtime . '/files')
+        )
+    )
+    ->addArgument(
+        new \app\helpers\ImageProcessor(
+            new \Gregwar\Image\Image()
+        )
+    );
+
 /** @var \app\http\Application $application */
 $application = $container->get(\app\http\Application::class);
 
-$application->get(new Path('/'), new Handler($container->get(IndexAction::class)));
+//$application->get(new Path('/'), new Handler($container->get(IndexAction::class)));
 $application->get(new Path('/tasks'), new Handler($container->get(TaskIndexAction::class)));
+$application->get(new Path('/'), new Handler($container->get(TaskIndexAction::class)));
 $application->get(new Path('/tasks/{page}'), new Handler($container->get(TaskIndexAction::class)));
 $application->get(new Path('/task/create'), new Handler($container->get(TaskCreateAction::class)));
 $application->post(new Path('/task/create'), new Handler($container->get(TaskCreateAction::class)));
 $application->get(new Path('/task/update/{id}'), new Handler($container->get(TaskUpdateAction::class)));
 $application->post(new Path('/task/update/{id}'), new Handler($container->get(TaskUpdateAction::class)));
+$application->get(new Path('/task/image/{id}'), new Handler($container->get(TaskImageAction::class)));
 $application->get(new Path('/task/{id}'), new Handler($container->get(TaskViewAction::class)));
+
 
 $application->pipe($container->get(\app\http\middleware\BasicAuthMiddleware::class));
 

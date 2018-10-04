@@ -39,8 +39,8 @@ $title = 'View task';
                 <td><?= $model->getDescription() ?></td>
             </tr>
             <tr>
-                <th scope="row">Description</th>
-                <td><?= $model->getImage() ?></td>
+                <th scope="row">Image</th>
+                <td><img src="/task/image/<?= $model->getId() ?>"></td>
             </tr>
             <tr>
                 <th scope="row">Done</th>

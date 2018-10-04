@@ -31,6 +31,4 @@ class CreateAction extends BaseAction
             'form' => $form,
         ]);
     }
-
-
 }

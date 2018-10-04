@@ -47,15 +47,6 @@ class CreateForm extends BaseForm
             $this->addError('description', $exception->getMessage());
         }
 
-        try {
-            Assertion::notNull($this->image);
-            Assertion::string($this->image);
-            Assertion::inArray(pathinfo($this->image, PATHINFO_EXTENSION), Image::allowedExtensions());
-            Assertion::lessOrEqualThan(strlen($this->image), 255);
-        } catch (InvalidArgumentException $exception) {
-            $this->addError('image', $exception->getMessage());
-        }
-
         return !$this->hasErrors();
     }
 }

@@ -17,7 +17,7 @@ $title = 'Create task';
 </div>
 <div class="row">
     <div class="col-sm-12">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="user">User name</label>
                 <input type="text" class="form-control" id="user" name="user" aria-describedby="usernameHelp" placeholder="Username" required value="<?= $form->user; ?>">
