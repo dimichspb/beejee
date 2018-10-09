@@ -1,5 +1,5 @@
 {
-    "name": "dimichspb/framework",
+    "name": "dimichspb/beejee",
     "authors": [
         {
             "name": "Dmitry Tarantin",
@@ -21,6 +21,7 @@
         "ramsey/uuid": "^3.8",
         "doctrine/migrations": "^1.8",
         "twbs/bootstrap": "4.0.0",
+        "components/jquery": "^3.3",
         "league/flysystem": "^1.0",
         "gregwar/image": "2.*"
 

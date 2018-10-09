@@ -38,7 +38,37 @@ $title = 'Create task';
                 <input type="file" class="form-control" id="image" name="image" aria-describedby="imageHelp" placeholder="Image" accept="image/x-png,image/gif,image/jpeg" required>
                 <small id="imageHelp" class="form-text text-muted">Please choose the image to upload</small>
             </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#preview-modal">Preview</button>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+    </div>
+</div>
+<div class="modal fade" id="preview-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Task create preview</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="preview-user">User name</label>
+                    <input type="text" class="form-control" id="preview-user" placeholder="" value="" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="preview-email">E-mail</label>
+                    <input type="email" class="form-control" id="preview-email" placeholder="" value="" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="preview-description">Description</label>
+                    <textarea rows="5" class="form-control" id="preview-description" placeholder="" readonly></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
 </div>

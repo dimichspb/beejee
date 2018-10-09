@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a64255be1cc045126784937b27b8a13",
+    "content-hash": "e648148c16049463333c8898602b1e06",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -61,6 +61,48 @@
                 "validation"
             ],
             "time": "2018-07-04T11:02:54+00:00"
+        },
+        {
+            "name": "components/jquery",
+            "version": "3.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/jquery.git",
+                "reference": "459648cda77875519c5da3ae1dd0ed5d170aa649"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jquery/zipball/459648cda77875519c5da3ae1dd0ed5d170aa649",
+                "reference": "459648cda77875519c5da3ae1dd0ed5d170aa649",
+                "shasum": ""
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "jquery.js"
+                    ],
+                    "files": [
+                        "jquery.min.js",
+                        "jquery.min.map",
+                        "jquery.slim.js",
+                        "jquery.slim.min.js",
+                        "jquery.slim.min.map"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "JS Foundation and other contributors"
+                }
+            ],
+            "description": "jQuery JavaScript Library",
+            "homepage": "http://jquery.com",
+            "time": "2018-03-04T13:23:48+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -1239,16 +1281,16 @@
         },
         {
             "name": "league/route",
-            "version": "4.1.0",
+            "version": "4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/route.git",
-                "reference": "4895b5f5a5a35a521d9c22ab195d974cb3da09a0"
+                "reference": "ccd53e672a5389669dc7a3fc4d01f85530d8773c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/route/zipball/4895b5f5a5a35a521d9c22ab195d974cb3da09a0",
-                "reference": "4895b5f5a5a35a521d9c22ab195d974cb3da09a0",
+                "url": "https://api.github.com/repos/thephpleague/route/zipball/ccd53e672a5389669dc7a3fc4d01f85530d8773c",
+                "reference": "ccd53e672a5389669dc7a3fc4d01f85530d8773c",
                 "shasum": ""
             },
             "require": {
@@ -1305,7 +1347,7 @@
                 "route",
                 "router"
             ],
-            "time": "2018-09-21T14:17:21+00:00"
+            "time": "2018-10-09T07:10:12+00:00"
         },
         {
             "name": "nikic/fast-route",
