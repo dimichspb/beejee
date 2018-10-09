@@ -44,7 +44,7 @@ $title = 'Create task';
     </div>
 </div>
 <div class="modal fade" id="preview-modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Task create preview</h5>
@@ -53,17 +53,27 @@ $title = 'Create task';
                 </button>
             </div>
             <div class="modal-body">
-                <div class="form-group">
-                    <label for="preview-user">User name</label>
-                    <input type="text" class="form-control" id="preview-user" placeholder="" value="" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="preview-email">E-mail</label>
-                    <input type="email" class="form-control" id="preview-email" placeholder="" value="" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="preview-description">Description</label>
-                    <textarea rows="5" class="form-control" id="preview-description" placeholder="" readonly></textarea>
+                <div class="row">
+                    <div class="col-xs-12 col-md-8">
+                        <div class="form-group">
+                            <label for="preview-user">User name</label>
+                            <input type="text" class="form-control" id="preview-user" placeholder="" value="" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="preview-email">E-mail</label>
+                            <input type="email" class="form-control" id="preview-email" placeholder="" value="" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="preview-description">Description</label>
+                            <textarea rows="5" class="form-control" id="preview-description" placeholder="" readonly></textarea>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="form-group">
+                            <label for="preview-image">Image</label>
+                            <img src="" id="preview-image" class="img-fluid img-thumbnail rounded" title="Image preview" />
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
